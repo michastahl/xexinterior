@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X ExInterior</title>
+    <meta name="description" content="Examinationsuppgift" />
+    <meta name="author" content="Michaela Ståhlgren" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white text-[#121212]">
+    <!-- Wrapper -->
+    <div class="mx-auto max-w-[1300px] bg-white">
+      <!-- HEADER -->
+      <header class="bg-[#121212] text-white">
+        <div
+          class="flex min-h-[80px] items-center justify-between px-4 md:px-6"
+        >
+          <!-- Logotyp -->
+          <a href="index.html" class="shrink-0">
+            <img
+              src="image/logo.png"
+              alt="Företagets logga"
+              width="158"
+              height="105"
+              class="h-[70px] w-auto"
+            />
+          </a>
+
+          <!-- Desktop navigation -->
+          <div class="hidden items-center gap-6 md:flex">
+            <nav aria-label="Huvudmeny">
+              <ul class="flex items-center gap-6">
+                <li>
+                  <a href="index.html" class="transition hover:text-[#746a6a]"
+                    >Hem</a
+                  >
+                </li>
+
+                <!-- Dropdown: Om oss -->
+                <li class="relative group">
+                  <button
+                    type="button"
+                    class="flex items-center gap-1 transition hover:text-[#746a6a]"
+                    aria-expanded="false"
+                  >
+                    Om oss
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </button>
+
+                  <ul
+                    class="invisible absolute left-0 top-full z-20 mt-2 w-52 rounded-md bg-white py-2 text-[#121212] opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
+                  >
+                    <li>
+                      <a
+                        href="about.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Om oss
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="store.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Hitta butik
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="openinghours.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Öppettider
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="contactinfo.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Kontakta oss
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Dropdown: Produkter -->
+                <li class="relative group">
+                  <button
+                    type="button"
+                    class="flex items-center gap-1 transition hover:text-[#746a6a]"
+                    aria-expanded="false"
+                  >
+                    Produkter
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </button>
+
+                  <ul
+                    class="invisible absolute left-0 top-full z-20 mt-2 w-48 rounded-md bg-white py-2 text-[#121212] opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
+                  >
+                    <li>
+                      <a
+                        href="decoration.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Dekoration
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Sökfält desktop -->
+            <form class="flex items-center" role="search">
+              <label for="site-search-desktop" class="sr-only"
+                >Sök på webbplatsen</label
+              >
+              <input
+                id="site-search-desktop"
+                type="search"
+                placeholder="Sök..."
+                class="rounded-full bg-white px-4 py-2 text-[#121212] outline-none ring-0 focus:ring-2 focus:ring-[#cfb53b]"
+              />
+            </form>
+
+            <!-- Varukorgikon -->
+            <a
+              href="cart.html"
+              aria-label="Varukorg"
+              class="text-xl transition hover:text-[#746a6a]"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+
+          <!-- Hamburgermeny för mobil -->
+          <button
+            id="menu-button"
+            type="button"
+            class="text-4xl leading-none md:hidden"
+            aria-label="Öppna huvudmeny"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            &#9776;
+          </button>
+        </div>
+
+        <!-- Mobilmeny -->
+        <div id="mobile-menu" class="hidden px-4 pb-4 md:hidden">
+          <nav aria-label="Mobil huvudmeny">
+            <ul class="flex flex-col items-center gap-4 pt-2">
+              <li>
+                <a href="index.html" class="transition hover:text-[#746a6a]">
+                  Hem
+                </a>
+              </li>
+
+              <!-- Mobil dropdown: Om oss -->
+              <li class="w-full max-w-xs text-center">
+                <button
+                  id="mobile-about-button"
+                  type="button"
+                  class="flex w-full items-center justify-center gap-2 transition hover:text-[#746a6a]"
+                >
+                  Om oss
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+
+                <ul id="mobile-about-submenu" class="mt-2 hidden space-y-2">
+                  <li>
+                    <a
+                      href="about.html"
+                      class="block rounded px-4 py-2 hover:bg-white/10"
+                    >
+                      Om oss
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="store.html"
+                      class="block rounded px-4 py-2 hover:bg-white/10"
+                    >
+                      Hitta butik
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="openinghours.html"
+                      class="block rounded px-4 py-2 hover:bg-white/10"
+                    >
+                      Öppettider
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contactinfo.html"
+                      class="block rounded px-4 py-2 hover:bg-white/10"
+                    >
+                      Kontakta oss
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Mobil dropdown: Produkter -->
+              <li class="w-full max-w-xs text-center">
+                <button
+                  id="mobile-products-button"
+                  type="button"
+                  class="flex w-full items-center justify-center gap-2 transition hover:text-[#746a6a]"
+                >
+                  Produkter
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+
+                <ul id="mobile-products-submenu" class="mt-2 hidden space-y-2">
+                  <li>
+                    <a
+                      href="decoration.html"
+                      class="block rounded px-4 py-2 hover:bg-white/10"
+                    >
+                      Dekoration
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Varukorg i mobilmenyn -->
+              <li>
+                <a
+                  href="cart.html"
+                  class="flex items-center justify-center gap-2 text-xl transition hover:text-[#746a6a]"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Varukorg
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Sökfält mobil -->
+          <form class="mt-4 flex justify-center" role="search">
+            <label for="site-search-mobile" class="sr-only">Sök</label>
+            <input
+              id="site-search-mobile"
+              type="search"
+              placeholder="Sök..."
+              class="w-full max-w-sm rounded-full bg-white px-4 py-2 text-[#121212]"
+            />
+          </form>
+        </div>
+      </header>
+
+      <!-- HERO-BILD -->
+      <div class="w-full">
+        <picture>
+          <source
+            srcset="image/hero-sidor-desktop.webp"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="image/hero-sidor-tablet.webp"
+            media="(min-width: 640px)"
+          />
+          <img
+            src="image/hero-sidor-mobil.webp"
+            alt="ett dukat matbord med en stor hylla med inredning i bakgrunden"
+            width="576"
+            height="390"
+            class="block h-auto w-full object-cover"
+          />
+        </picture>
+      </div>
+
+      <!-- HUVUDINNEHÅLL -->
+      <main class="px-4 md:px-6">
+        <!-- Sidans huvudrubrik -->
+        <div class="my-10 flex justify-center">
+          <h1
+            class="inline-block border-y border-black text-center text-2xl font-medium md:text-3xl"
+          >
+            Om oss
+          </h1>
+        </div>
+
+        <!-- intro text + bild -->
+        <section
+          class="mx-auto grid max-w-6xl items-center gap-10 py-10 md:grid-cols-2"
+        >
+          <div class="mx-auto w-full max-w-[520px]">
+            <h2 class="mb-4 text-2xl font-medium md:text-3xl">
+              Tidlös inredning med känsla
+            </h2>
+
+            <p class="mb-4 text-base leading-7 md:text-lg">
+              ExInterior är ett inredningsföretag som vill skapa hem med värme,
+              balans och personlighet.
+            </p>
+
+            <p class="text-base leading-7 md:text-lg">
+              Genom att kombinera modern design med klassiska uttryck vill vi
+              inspirera våra kunder att skapa harmoniska och personliga miljöer.
+            </p>
+          </div>
+
+          <div class="mx-auto w-full max-w-[500px] overflow-hidden rounded-md">
+            <img
+              src="image/ljuslyktor.webp"
+              alt="Välstylad inredningsmiljö"
+              width="400"
+              height="533"
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </section>
+
+        <!-- Värdeord -->
+        <section class="mx-auto max-w-6xl py-12">
+          <div class="mb-10 text-center">
+            <h2 class="mb-4 text-2xl font-medium md:text-3xl">Våra värdeord</h2>
+
+            <p class="mx-auto max-w-3xl text-base leading-7 md:text-lg">
+              Vi arbetar med fokus på kvalitet, estetik och helhetskänsla.
+            </p>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <article class="rounded-md border border-[#121212] p-6 text-center">
+              <h3 class="mb-3 text-xl font-medium">Kvalitet</h3>
+              <p class="text-base leading-7">
+                Produkter med material och former som håller över tid.
+              </p>
+            </article>
+
+            <article class="rounded-md border border-[#121212] p-6 text-center">
+              <h3 class="mb-3 text-xl font-medium">Tidlös design</h3>
+              <p class="text-base leading-7">
+                Sortiment som passar både moderna och klassiska hem.
+              </p>
+            </article>
+
+            <article class="rounded-md border border-[#121212] p-6 text-center">
+              <h3 class="mb-3 text-xl font-medium">Inspiration</h3>
+              <p class="text-base leading-7">
+                Vi vill inspirera till personliga rum med små detaljer.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- bild + text -->
+        <section
+          class="mx-auto grid max-w-6xl items-center gap-10 py-12 md:grid-cols-2"
+        >
+          <div class="mx-auto w-full max-w-[500px] overflow-hidden rounded-md">
+            <img
+              src="image/lampor.webp"
+              alt="Inredningsdetaljer"
+              width="400"
+              height="533"
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="mx-auto w-full max-w-[520px]">
+            <h2 class="mb-4 text-2xl font-medium md:text-3xl">
+              Mer än bara produkter
+            </h2>
+
+            <p class="mb-4 text-base leading-7 md:text-lg">
+              För oss handlar inredning om känslan i ett hem.
+            </p>
+
+            <p class="mb-6 text-base leading-7 md:text-lg">
+              Vi vill hjälpa kunder att hitta produkter som passar deras stil
+              och behov.
+            </p>
+
+            <a
+              href="contactinfo.html"
+              class="inline-block rounded-md bg-[#121212] px-6 py-3 font-medium text-white transition hover:bg-[#746a6a]"
+            >
+              Kontakta oss
+            </a>
+          </div>
+        </section>
+
+        <!-- Nyhetsbrev -->
+        <section class="my-16 flex justify-center">
+          <form
+            class="flex w-full max-w-[500px] flex-col items-center px-4 text-center"
+          >
+            <h2 class="mb-2 text-2xl font-medium md:text-3xl">
+              Prenumerera på vårt Nyhetsbrev
+            </h2>
+            <p class="mb-6">Fyll i din E-mail</p>
+
+            <div
+              class="flex w-full max-w-[400px] flex-col gap-3 sm:flex-row sm:gap-0"
+            >
+              <label for="email" class="sr-only">Fyll i din email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                class="w-full flex-1 rounded-md border-2 border-[#121212] px-4 py-2 outline-none focus:ring-2 focus:ring-[#cfb53b] sm:rounded-r-none"
+              />
+              <button
+                type="submit"
+                class="rounded-md border border-[#121212] bg-[#121212] px-5 py-2 font-medium text-white transition hover:bg-[#746a6a] sm:rounded-l-none"
+              >
+                REGISTRERA
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer
+        class="grid gap-8 bg-[#121212] px-[5%] py-12 text-white md:grid-cols-2 xl:grid-cols-3"
+      >
+        <!-- Kundservice -->
+        <section>
+          <h2 class="mb-2 text-2xl font-medium text-white">Kundservice</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="contactinfo.html" class="transition hover:text-[#746a6a]"
+                >Kontakta oss</a
+              >
+            </li>
+            <li>
+              <a href="store.html" class="transition hover:text-[#746a6a]"
+                >Hitta butik</a
+              >
+            </li>
+            <li>
+              <a
+                href="openinghours.html"
+                class="transition hover:text-[#746a6a]"
+                >Öppettider</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Företagslänkar -->
+        <section>
+          <h2 class="mb-2 text-2xl font-medium text-white">ExInterior</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="about.html" class="transition hover:text-[#746a6a]"
+                >Om oss</a
+              >
+            </li>
+            <li>
+              <a href="decoration.html" class="transition hover:text-[#746a6a]"
+                >Dekoration</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Sociala medier -->
+        <section>
+          <h2 class="mb-2 text-2xl font-medium text-white">Följ oss</h2>
+
+          <div class="mb-10 flex gap-6 text-2xl">
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="transition hover:text-[#746a6a]"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="transition hover:text-[#746a6a]"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+
+          <p class="text-sm">Designed by Michaela</p>
+        </section>
+      </footer>
+    </div>
+
+    <!-- JavaScript-fil för menyfunktioner -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
