@@ -1,5 +1,6 @@
 import "./style.css";
 
+// Mobil-menyn
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 
